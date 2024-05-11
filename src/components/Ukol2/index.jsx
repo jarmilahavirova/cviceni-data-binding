@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 /*
 Zadání: Přidejte na prvek `input` událost `onChange`, která bude do stavu `login` ukládat aktuální
@@ -7,13 +7,19 @@ Zadání: Přidejte na prvek `input` událost `onChange`, která bude do stavu `
 */
 
 export const Ukol2 = () => {
-  const [login, setLogin] = useState('petr');
+  const [login, setLogin] = useState("petr");
 
   return (
     <>
       <label>
         Login:
-        <input type="text" />
+        <input
+          type="text"
+          value={login}
+          onChange={(event) => {
+            setLogin(event.target.value);
+          }}
+        />
       </label>
     </>
   );
